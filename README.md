@@ -1,6 +1,6 @@
-# 🏃 **[Don Dai Runner]**
+# 🏃 **Don Dai Runner**
 
-Welcome to **[Don Dai Runner]**, an exciting side-scrolling runner game where you navigate through breathtaking landscapes, dodge obstacles, and chase high scores! This game is designed to be fun, addictive, and mobile-friendly, making it perfect for players of all ages.
+Welcome to **Don Dai Runner**, an exciting side-scrolling runner game where you navigate through breathtaking landscapes, dodge obstacles, and chase high scores! This game is designed to be fun, addictive, and mobile-friendly, making it perfect for players of all ages.
 
 ## 🌟 **Features**
 
@@ -36,7 +36,7 @@ Follow these steps to set up and run the game locally:
    ```
 2. **Navigate to the Project Directory**:
    ```bash
-   cd your-game-name
+   cd don-dai-runner
    ```
 3. **Open the Game**:
    Open the `index.html` file in your browser.
@@ -51,7 +51,7 @@ This game is fully optimized for mobile devices:
 ## 💻 **File Structure**
 
 ```
-your-game-name/
+don-dai-runner/
 │
 ├── index.html       # Main HTML file
 ├── style.css        # CSS file for styling
@@ -100,4 +100,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ### 🌟 **Play Now**
 
-Start running and dodging obstacles in **[Don Dai Runner]**. Let the adventure begin!
+Start running and dodging obstacles in **Don Dai Runner**. Let the adventure begin!
