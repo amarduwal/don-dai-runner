@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-image: url('images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#game {
+  display: none;
+  position: relative;
+}
+
+#gameCanvas {
+  display: block;
+}
+
+canvas {
+  background: linear-gradient(180deg, #fff, #a6e4ff); /* Subtle gradient */
+  display: block;
+  border: 2px solid #000;
+}
+
+#controls {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#controls.show {
+  opacity: 1;
+}
+
+#homeBtn,
+#restartBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#homeBtn img,
+#restartBtn img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+#homeBtn img:hover,
+#restartBtn img:hover {
+  transform: scale(1.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+#ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #4caf50;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+#menu h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #4caf50;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#menu p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+#menu button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2e3880, #0dacda);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#menu button:hover {
+  background: linear-gradient(135deg, #005038, #669141);
+}
+#menu img {
+  display: inline-block;
+  width: 10%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

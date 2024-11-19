@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Don Dai Runner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="game" style="display: none">
+        <canvas id="gameCanvas"></canvas>
+        <div
+          id="controls"
+          style="display: none; text-align: center; margin-top: 20px"
+        >
+          <button id="homeBtn">
+            <img src="images/home-icon.png" alt="Home" />
+          </button>
+          <button id="restartBtn">
+            <img src="images/restart-icon.png" alt="Restart" />
+          </button>
+        </div>
+        <div id="ui">
+          <span id="score">Score: 0</span>
+          <span id="highScore">High Score: 0</span>
+        </div>
+      </div>
+      <div id="menu">
+        <img src="images/don-dai-logo.jpg" alt="Restart" />
+        <h1>Don Dai Runner!</h1>
+        <button id="startBtn">Start Game</button>
+        <button id="resetScore">Reset High Score</button>
+        <p id="menuHighScore">High Score: 0</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
