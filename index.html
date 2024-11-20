@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <title>Don Dai Runner</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -10,10 +13,7 @@
     <div id="game-container">
       <div id="game" style="display: none">
         <canvas id="gameCanvas"></canvas>
-        <div
-          id="controls"
-          style="display: none; text-align: center; margin-top: 20px"
-        >
+        <div id="controls" style="display: none; text-align: center">
           <button id="homeBtn">
             <img src="images/home-icon.png" alt="Home" />
           </button>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div id="menu">
-        <img src="images/don-dai-logo.jpg" alt="Restart" />
+        <img src="images/don-dai-logo.png" alt="Restart" />
         <h1>Don Dai Runner!</h1>
         <button id="startBtn">Start Game</button>
         <button id="resetScore">Reset High Score</button>

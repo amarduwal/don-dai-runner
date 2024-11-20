@@ -236,11 +236,12 @@ function drawWinningScreen() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // Semi-transparent background
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = '#e86d1e';
   ctx.font = '48px Arial';
   ctx.textAlign = 'center';
   ctx.fillText('🎉 You Win! 🎉', canvas.width / 2, canvas.height / 2 - 50);
 
+  ctx.fillStyle = '#fff';
   ctx.font = '32px Arial';
   ctx.fillText(
     `Final Score: ${score}`,
@@ -248,6 +249,7 @@ function drawWinningScreen() {
     canvas.height / 2 + 20
   );
 
+  ctx.fillStyle = '#e86d1e';
   ctx.font = '24px Arial';
   ctx.fillText(
     'Press Start to Play Again',
@@ -265,7 +267,7 @@ function drawLoosingScreen() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // Semi-transparent background
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = '#e86d1e';
   ctx.font = '48px Arial';
   ctx.textAlign = 'center';
   ctx.fillText(
@@ -274,6 +276,7 @@ function drawLoosingScreen() {
     canvas.height / 2 - 50
   );
 
+  ctx.fillStyle = '#fff';
   ctx.font = '32px Arial';
   ctx.fillText(
     `Final Score: ${score}`,
@@ -281,6 +284,7 @@ function drawLoosingScreen() {
     canvas.height / 2 + 20
   );
 
+  ctx.fillStyle = '#e86d1e';
   ctx.font = '24px Arial';
   ctx.fillText(
     'Restart to Play Again',
@@ -358,7 +362,7 @@ function updateObstacles(timestamp) {
     lastObstacleTime = timestamp;
 
     // Adjust next obstacle gap dynamically based on speed and randomness
-    const minGap = 500; // Minimum gap (in ms)
+    const minGap = 1000; // Minimum gap (in ms)
     const maxGap = 2000 - speed * 50; // Maximum gap decreases as speed increases
     nextObstacleGap = Math.random() * (maxGap - minGap) + minGap;
 
@@ -510,21 +514,48 @@ function resetGameVariables() {
 }
 
 function startGame() {
-  // Reset the game state
-  resetGameVariables();
-
   // Hide buttons with fade-out effect
   controls.classList.remove('show');
   setTimeout(() => (controls.style.display = 'none'), 500);
 
-  // Start the game
-  gameState = 'playing';
-  gameRunning = true;
   menu.style.display = 'none';
   gameDiv.style.display = 'block';
   // Hide controls and menu, start the game
   controls.style.display = 'none';
-  requestAnimationFrame(loop);
+
+  let countdown = 3;
+
+  function showCountdown() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+    drawBackground(); // Draw the background
+
+    // Draw semi-transparent overlay
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = '#669141';
+    ctx.font = `48px Arial`;
+    ctx.textAlign = 'center';
+    ctx.fillText('Get Ready!', canvas.width / 2, canvas.height / 2 - 50);
+    ctx.fillText(
+      countdown > 0 ? countdown : 'Go!',
+      canvas.width / 2,
+      canvas.height / 2 + 69
+    );
+
+    if (countdown > 0) {
+      countdown--;
+      setTimeout(showCountdown, 1000); // Decrease the countdown every second
+    } else {
+      resetGameVariables(); // Reset the game state
+      gameState = 'playing';
+      gameRunning = true; // Set game state to running
+      requestAnimationFrame(loop); // Start the game loop
+    }
+  }
+
+  showCountdown(); // Start the countdown
 }
 
 // Event listeners

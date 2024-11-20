@@ -10,6 +10,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  touch-action: none; /* Disable zoom gestures on touch devices */
 }
 
 #game {
@@ -19,18 +20,21 @@ body {
 
 #gameCanvas {
   display: block;
+  animation: zoom 1.5s ease-in-out;
 }
 
 canvas {
   background: linear-gradient(180deg, #fff, #a6e4ff); /* Subtle gradient */
   display: block;
   border: 2px solid #000;
+  width: 100%; /* Make the canvas responsive */
+  height: 100%; /* Match the screen height */
 }
 
 #controls {
   display: none; /* Hidden by default */
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -38,7 +42,7 @@ canvas {
   transition: opacity 0.5s ease;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40%;
 }
 
 #controls.show {
@@ -72,7 +76,7 @@ canvas {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: #4caf50;
+  color: #fff;
   font-weight: bold;
   font-size: 18px;
 }
@@ -121,6 +125,7 @@ canvas {
 #menu button:hover {
   background: linear-gradient(135deg, #005038, #669141);
 }
+
 #menu img {
   display: inline-block;
   width: 10%;
@@ -128,4 +133,25 @@ canvas {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+#score,
+#highScore {
+  margin: 2%;
+  color: #fff;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
